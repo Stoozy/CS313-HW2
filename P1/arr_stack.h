@@ -11,7 +11,7 @@ class arr_stack{
 		arr_stack(const int max_size){
 			this->max_size = max_size;
 			this->arr = new T[max_size];
-			this->size = -1;
+			this->size = 0;
 		}
 
 		~arr_stack(){}
@@ -21,6 +21,8 @@ class arr_stack{
 		}
 
 		void pop(){
+			if(size == 0)
+				return;
 			--size;
 		}
 
@@ -36,7 +38,7 @@ class arr_stack{
 				return;
 			}
 
-			for(int i=0; i<size; ++i){
+			for(int i=0; i<size+1; ++i){
 				std::cout << " " << this->arr[i];
 			}
 

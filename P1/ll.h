@@ -12,65 +12,38 @@ template <class T>
 class LL {
     private:
         int size;
-        Node<T> * first;
-        Node<T> * last;
+        Node<T> * head;
 
+		bool is_empty() { return size == 0;};
     public:
         LL(){
-            this->size = 0;
+			size = 0;
         }
 
         ~LL(){	}
 
         void add(const T& val){
-            if (this->size == 0) {
-                this->first = new Node<T>{val, nullptr};
-                this->last = this->first;
-                this->size++;
+			// if empty, initialize head to the new Node 
+            if (is_empty()) {
+                head = new Node<T>{val, nullptr};
+				++size;
                 return;
             }
 
-            // iterate list and append to last
-            Node<T> * current = this->first;
-            while(current->next != nullptr){
-                current = current->next;
-            }
-            current->next = new Node<T>{val, nullptr};
-
-            this->last = current->next;
-            this->size++;
-
+			Node<T> * old_head = head;
+			// point to old head
+			head = new Node<T>{val, old_head};
+			++size;
             return;
         }
 
 
 		T top(){
-			// returns garbage if size = 0
-			return this->last->info;	
+			return head->info;
 		}
 
-        void remove_last(){
-			if(this->size == 1){
-				this->first = nullptr;
-				this->last = nullptr;
-				--size;
-				return;
-			}
-
-			Node<T> * current = this->first;
-
-			// traverse list
-			while(current->next != nullptr){
-				if(current->next->next == nullptr){
-					current->next = nullptr;	
-					this->last = current;	
-
-					--size;
-					return;
-				}
-				current = current->next;
-			}
-
+        void pop_front(){
+			head = head->next;
 			return;
 		}
 
@@ -80,9 +53,9 @@ class LL {
 				return;
 			}
 
-			Node<T> * current = this->first;
+			Node<T> * current = this->head;
 
-			while(current != this->last){
+			while(current->next != nullptr){
 				std::cout <<  " "  << current->info;
 				current = current->next;
 			}
@@ -91,8 +64,7 @@ class LL {
 		}
 
 		int length(){
-			return this->size;
+			return size;
 		}
 
-        void nth(const int pos){	}
 };

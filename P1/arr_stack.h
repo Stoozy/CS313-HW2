@@ -4,41 +4,48 @@ template <class T>
 class arr_stack{
 	private:
 		int max_size;
-		int size;
+		int stack_top;
 		T * arr;
+
+
+		bool is_empty(){
+			return stack_top == 0;	
+		}
+
 	public:
 			
 		arr_stack(const int max_size){
 			this->max_size = max_size;
-			this->arr = new T[max_size];
-			this->size = 0;
+			arr = new T[max_size];
+			stack_top = 0;
 		}
 
-		~arr_stack(){}
+		~arr_stack(){
+		}
 
-		void push(const T& val){
-			this->arr[++size] = val;
+		void push(T val){
+			arr[++stack_top] = val;
 		}
 
 		void pop(){
-			if(size == 0)
+			if(stack_top == 0)
 				return;
-			--size;
+			--stack_top;
 		}
 
 		T top(){
-			return this->arr[size];
+			return arr[stack_top];
 		}
 
 		void print(){
 			std::cout << "Stack: ";
 			// say empty if stack is empty
-			if(this->size == 0) {
+			if(this->is_empty()) {
 				std::cout << " Empty" << std::endl;
 				return;
 			}
 
-			for(int i=0; i<size+1; ++i){
+			for(int i=0; i<stack_top+1; ++i){
 				std::cout << " " << this->arr[i];
 			}
 

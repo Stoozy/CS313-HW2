@@ -6,7 +6,6 @@ template <class T>
 class ll_stack{
     private:
         LL<T> list;
-
     public:
         ll_stack(){
 			this->list = LL<T>();
@@ -16,16 +15,16 @@ class ll_stack{
 
 		}
 
-        void push(const T& val){
+        void push(T val){
 			this->list.add(val);
 		}
 
         T top(){
-			return this->list.top();
+			return list.top();
 		}
 
         void pop(){
-			return this->list.remove_last();
+			return list.pop_front();
 		}
 
 		void print(){

@@ -2,18 +2,24 @@
 #include "ll.h"
 #include <iostream>
 
+/*
+** This is more like  wrapper class around
+** the linked list data structure
+**
+** The internal functinality is in the linked list
+*/
+
 template <class T>
 class ll_stack{
 	private:
 		LL<T> list;
 	public:
+
 		ll_stack(){
 			this->list = LL<T>();
 		}
 
-		~ll_stack(){
-
-		}
+		~ll_stack(){ }
 
 		void push(T val){
 			this->list.add(val);

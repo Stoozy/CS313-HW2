@@ -1,0 +1,15 @@
+* Problem
+ Test a stack's speed (with millions of operations) as to which is faster: an array based stack or a linked list based stack.
+
+* Solution
+ I first created a linked list based stack and an array based stack.
+  -  Note: The linked list based stack pushes new node to the front, that way it's O(1) to push/pop. No need to traverse the entire list to get to the end.
+ The array stack was straightforward, its constructor requires a maximum stack size. The stack can only have that many items maximum.
+
+
+* Results
+ Results for doing 10 million operations (both push and pop)
+| Stack       | Time      |
+|-------------+-----------|
+| Linked List | 24948 ms  |
+| Array       | 100658 ms |

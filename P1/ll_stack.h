@@ -4,26 +4,26 @@
 
 template <class T>
 class ll_stack{
-    private:
-        LL<T> list;
-    public:
-        ll_stack(){
+	private:
+		LL<T> list;
+	public:
+		ll_stack(){
 			this->list = LL<T>();
 		}
 
-        ~ll_stack(){
+		~ll_stack(){
 
 		}
 
-        void push(T val){
+		void push(T val){
 			this->list.add(val);
 		}
 
-        T top(){
+		T top(){
 			return list.top();
 		}
 
-        void pop(){
+		void pop(){
 			return list.pop_front();
 		}
 

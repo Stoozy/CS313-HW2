@@ -9,7 +9,7 @@
 
 * Results
  Results for doing 10 million operations (both push and pop)
-| Stack       | Time      |
-|-------------+-----------|
-| Linked List | 24948 ms  |
-| Array       | 100658 ms |
+| Stack       | Time     |
+|-------------+----------|
+| Linked List | 18721 ms |
+| Array       | 44089 ms |

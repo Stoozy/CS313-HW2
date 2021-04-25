@@ -1,0 +1,45 @@
+* Problem
+Use a stack to pass in a string and reverse each word in the string. For instance, if you
+have the string “​ When Chuck Norris falls in water, Chuck Norris doesn't get wet. Water
+gets Chuck Norris. ​ ” It should now say, “​ nehW kcuhC sirroN sllaf ni retaw, ... ​ ” That is, it
+should take in one string and be a function (or multiple functions) that use a stack (or
+multiple stacks) to reverse each word in the sentence. Create a text file that you input of
+Chuck Norris jokes and have the program reverse each of the jokes.
+
+* Solution
+I used the array implementation of the stack for this problem.
+
+First I created a file called `input.txt` which contained all the jokes. Then I read the file line by line. For each line I used the ' ' delimeter to split the words and store it in a vector called `words` For each word I used the `stack_reverse`  function to reverse the word. Then it's just a matter of printing all the reversed words which are stored in the vector and adding a space after.
+
+
+* String reversal with stack
+
+If the strings size is 0 or 1, just return the string, no need to reverse it.
+
+Otherwise, initialize a stack of `char` type with size being the size of the string (I need to specify size because I'm using array based stack).
+
+Build the stack by pushing all the characters in the string in order. Then, pop every character and append it to a reversed string variable.
+Since a stack is LIFO, the popping of the stack should result in the reverse of the initial order.
+
+Code sample:
+#+BEGIN_SRC c++
+	std::string stack_reverse(std::string str ){
+	if(str.size() == 0 || str.size() == 1) return str;
+
+	// build the stack
+	stack<char>	cstack = stack<char>(str.size());
+	for(int i=0; i<str.size();++i)
+		cstack.push(str[i]);
+
+	// pop the stack and output to `rev` string
+	std::string rev;
+	while(!cstack.is_empty()){
+		rev += cstack.top();
+		cstack.pop();
+	}
+
+	return rev;
+	}
+
+
+#+END_SRC

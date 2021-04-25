@@ -21,6 +21,7 @@ class arr_stack{
 		}
 
 		~arr_stack(){
+			delete [] arr;
 		}
 
 		void push(T val){

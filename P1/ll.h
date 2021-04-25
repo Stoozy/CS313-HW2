@@ -4,45 +4,45 @@
 
 template <class T>
 struct Node{
-    T info;
-    Node<T> * next;
+	T info;
+	Node<T> * next;
 };
 
 template <class T>
 class LL {
-    private:
-        int size;
-        Node<T> * head;
+	private:
+		int size;
+		Node<T> * head;
 
 		bool is_empty() { return size == 0;};
-    public:
-        LL(){
+	public:
+		LL(){
 			size = 0;
-        }
+		}
 
-        ~LL(){	}
+		~LL(){	}
 
-        void add(const T& val){
+		void add(const T& val){
 			// if empty, initialize head to the new Node 
-            if (is_empty()) {
-                head = new Node<T>{val, nullptr};
+			if (is_empty()) {
+				head = new Node<T>{val, nullptr};
 				++size;
-                return;
-            }
+				return;
+			}
 
 			Node<T> * old_head = head;
 			// point to old head
 			head = new Node<T>{val, old_head};
 			++size;
-            return;
-        }
+			return;
+		}
 
 
 		T top(){
 			return head->info;
 		}
 
-        void pop_front(){
+		void pop_front(){
 			head = head->next;
 			return;
 		}

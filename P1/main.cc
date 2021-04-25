@@ -29,10 +29,9 @@ int main(){
 
 	for(int i=0; i<10000; ++i){
 
-		ll_stack<int> s1 = ll_stack<int>();
-		arr_stack<int> s2 = arr_stack<int>(1000);
 
-		ll += TimeFunc([s1]()mutable{
+		ll += TimeFunc([]{
+			ll_stack<int> s1 = ll_stack<int>();
 			for(int i=0; i<1000;++i){
 				s1.push(rand()%100);
 			}
@@ -45,7 +44,8 @@ int main(){
 
 		});
 
-		arr += TimeFunc([s2]()mutable{
+		arr += TimeFunc([]{
+			arr_stack<int> s2 = arr_stack<int>(1000);
 			for(int i=0; i<1000;++i){
 				s2.push(rand()%100);
 			}
@@ -55,9 +55,6 @@ int main(){
 				s2.pop();
 			}
 		});
-
-
-
 	}
 
 

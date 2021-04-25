@@ -1,0 +1,16 @@
+* Problem
+Create your own stack functions to do the following:
+ + List all the elements in the stack
+ + Iterate through the stack and change one of the values based on its position
+
+* Solution
+ I simply used my array based implementation of a stack for this problem.
+ + Listing all elements was straightforward, I just needed to go over the array
+ with a for loop and just output every item.
+
+ + Changing an element based on position was also straightforward, I just need to set the value of the array at a specific index to the new value assigned;
+   #+BEGIN_SRC cpp
+		void set_nth(const int n, const T& val){
+			arr[n] = val;
+		}
+   #+END_SRC

@@ -26,7 +26,7 @@
 
  This function also prevents duplicates from being pushed on the stack.
 
- #+TITLE Sample Output:
+ Sample Output:
  #+BEGIN_SRC txt
     Sequence: [ 33 5 10 16 13  ]
     Subsequence (Stack): [ 5 10 13 ]

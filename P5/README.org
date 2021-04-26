@@ -1,0 +1,34 @@
+* Problem
+ Use an array based stack to solve the "longest increasing subsequence problem"
+* Solution
+ The algorithm discussed in the website https://www.techiedelight.com/longest-increasing-subsequence/ goes like this:
+ + Go over each item in the sequence and push on to the stack or replace a larger number with a smaller number from the left.
+ + Pushing/Replacing items like this should result in one of the longest increasing subsequences.
+
+ + Example:
+   #+BEGIN_SRC txt
+        Consider the following array [10,9,2,5,3,7,101,18]
+
+        [10] First item, currently the longest increasing subsequence (LIS)
+        [9] Replace 10 with 9 because it's smaller
+        [2] Replace 9 with 2 because it's smaller
+        [2,5] Push 5 onto the stack
+        [2,3] Replace 5 with 3
+        [2,3,7] Push 7
+        [2,3,7,101] Push 101
+        [2,3,7,101] Replace 101 with 18
+
+        In the end we are left with the LIS being of length 4.
+    #+END_SRC
+
+
+ To implement this algorithm, I added a function called ~push_ordered~ to my array based stack implementation. This makes sure a larger number is not present in the stack and pushes it normally. If a larger number IS on the stack, then it replaces the larger number with the smaller number, whereever it may be on the stack.
+
+ This function also prevents duplicates from being pushed on the stack.
+
+ #+TITLE Sample Output:
+ #+BEGIN_SRC txt
+    Sequence: [ 33 5 10 16 13  ]
+    Subsequence (Stack): [ 5 10 13 ]
+    Length of LIS: 3
+ #+END_SRC

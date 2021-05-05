@@ -17,6 +17,7 @@ class LL {
 		Node<T> * head;
 
 		bool is_empty() { return size == 0;};
+
 	public:
 		LL(){
 			size = 0;

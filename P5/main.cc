@@ -15,7 +15,8 @@ int main(){
 	srand(time(0));
 	std::vector<int> rand_nums;
 
-	stack<int> s = stack<int>(10);
+	stack<int> s = stack<int>(20);
+
 	for(int i=0; i<rand()%10+4; ++i){
 		rand_nums.push_back(rand()%50);
 		s.push_ordered(rand_nums[i]);
@@ -27,7 +28,7 @@ int main(){
 	std::cout << " ]" << std::endl;
 
 	s.print();
-	std::cout << "Length of LIS: " << s.size();
+	std::cout << "Length of LIS: " << s.size() << std::endl;
 
 	return 0;
 }

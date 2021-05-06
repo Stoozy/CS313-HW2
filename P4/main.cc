@@ -15,6 +15,7 @@ int main(){
 	fstack.print();
 
 	fstack.set_nth(2, 19.42);
+
 	std::cout << "After setting 2nd item to 19.42:" << std::endl;
 	fstack.print();
 

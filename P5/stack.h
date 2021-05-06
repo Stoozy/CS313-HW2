@@ -63,7 +63,6 @@ class stack{
 		** 
 		 */
         void push_ordered(const T& val) {
-            
             for(int i=0; i<stack_top+1; ++i) {
                 if(arr[i] == val) return;
                 

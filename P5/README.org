@@ -16,7 +16,7 @@
         [2,3] Replace 5 with 3
         [2,3,7] Push 7
         [2,3,7,101] Push 101
-        [2,3,7,101] Replace 101 with 18
+        [2,3,7,18] Replace 101 with 18
 
         In the end we are left with the LIS being of length 4.
     #+END_SRC
